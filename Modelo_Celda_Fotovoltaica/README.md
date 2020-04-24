@@ -2,13 +2,13 @@
 
 ​	El modelado de un panel fotovoltaico comercial se realiza en estas simulaciones. Es posible variar la temperatura y el nivel de radiación.
 
-​	La corriente del panel solar 
+​	La corriente del panel solar a diferentes tipos de temperaturas y radiación. 
 
-<img src="https://i.ibb.co/BLxdz1f/01.jpg" alt="GitHub Logo"  />
+<img src="https://i.ibb.co/51w12V3/01-data.jpg" alt="GitHub Logo"  />
 
-   La potencia del panel solar 
+   La potencia del panel solar  a diferentes tipos de temperaturas y radiación.
 
-![](https://i.ibb.co/Kj4c1yC/02.jpg)
+![](https://i.ibb.co/5TfWwsY/02-data.jpg)
 
 
 
@@ -25,6 +25,7 @@
 getd .;
 Vi=0;
 Vf=50; 
+
 G=0.5;   // Nivel de R. de : 500 W/m²
 Ta=20;  //  Temperatura ambiente : 20 C
 [V,Ivtg,P]=photovoltaicCell(Vi,Vf,N,Ta,G,Voc,Isc,k,q,Ns,Np,A,Ki,Eg)  
