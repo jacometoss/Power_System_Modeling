@@ -1,4 +1,4 @@
-# Modelo Celda Fotovoltaica
+# Modelo Panel Solar
 
 ​	El modelado de un panel fotovoltaico comercial se realiza en estas simulaciones. Es posible variar la temperatura y el nivel de radiación.
 
