@@ -4,7 +4,7 @@
 
 ​	La corriente del panel solar 
 
-![GitHub Logo](https://i.ibb.co/BLxdz1f/01.jpg)
+<img src="https://i.ibb.co/BLxdz1f/01.jpg" alt="GitHub Logo"  />
 
    La potencia del panel solar 
 
@@ -22,7 +22,6 @@
 ##  Inicio [star.sce]
 
 ```scilab
-tic
 getd .;
 Vi=0;
 Vf=50; 
@@ -62,7 +61,7 @@ Ta=12;
 [V,Ivtg,P]=photovoltaicCell(Vi,Vf,N,Ta,G,Voc,Isc,k,q,Ns,Np,A,Ki,Eg)  
 I(:,6)=Ivtg
 W(:,6)=P
-toc
+
 figure(1)
 plot(V,[I(:,1),I(:,2),I(:,3),I(:,4),I(:,5),I(:,6)])
 legend('T=20 C 500 W/m²','T=16 C 750 W/m²','T=26 C 1000 W/m²','T=18 C 800 W/m²','T=15 C 750 W/m²','T=12 C 750 W/m²')
