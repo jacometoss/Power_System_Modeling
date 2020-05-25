@@ -1,4 +1,4 @@
-# Modelo Panel Solar
+# Modelo Panel Solar RSM120-6-340M
 
 ​	El modelado de un panel fotovoltaico comercial se realiza en estas simulaciones. Es posible variar la temperatura y el nivel de radiación.
 
@@ -23,61 +23,71 @@
 
 ```scilab
 getd .;
-Vi=0;
-Vf=50; 
 
-G=0.5;   // Nivel de R. de : 500 W/m²
-Ta=20;  //  Temperatura ambiente : 20 C
+Vi=0;
+Vf=45;
+
+
+G=1.0;
+Ta=25;
 [V,Ivtg,P]=photovoltaicCell(Vi,Vf,N,Ta,G,Voc,Isc,k,q,Ns,Np,A,Ki,Eg)  
 I(:,1)=Ivtg
 W(:,1)=P
 
-
-G=0.75;
-Ta=16;
+G=0.8;
+Ta=25;
 [V,Ivtg,P]=photovoltaicCell(Vi,Vf,N,Ta,G,Voc,Isc,k,q,Ns,Np,A,Ki,Eg)  
 I(:,2)=Ivtg
 W(:,2)=P
 
-G=1.0;
-Ta=26;
+G=0.6;
+Ta=25;
 [V,Ivtg,P]=photovoltaicCell(Vi,Vf,N,Ta,G,Voc,Isc,k,q,Ns,Np,A,Ki,Eg)  
 I(:,3)=Ivtg
 W(:,3)=P
 
-G=0.8;
-Ta=18;
+G=0.4;
+Ta=25;
 [V,Ivtg,P]=photovoltaicCell(Vi,Vf,N,Ta,G,Voc,Isc,k,q,Ns,Np,A,Ki,Eg)  
 I(:,4)=Ivtg
 W(:,4)=P
 
-G=0.75;
-Ta=15;
+G=0.2;
+Ta=25;
 [V,Ivtg,P]=photovoltaicCell(Vi,Vf,N,Ta,G,Voc,Isc,k,q,Ns,Np,A,Ki,Eg)  
 I(:,5)=Ivtg
 W(:,5)=P
 
-G=0.75;
-Ta=12;
+G=0.1;
+Ta=25;
 [V,Ivtg,P]=photovoltaicCell(Vi,Vf,N,Ta,G,Voc,Isc,k,q,Ns,Np,A,Ki,Eg)  
 I(:,6)=Ivtg
 W(:,6)=P
 
-figure(1)
+//.....Gráfico de Corriente del panel solar a distintos tipos niveles de irradiancia....//
+scf(1)
 plot(V,[I(:,1),I(:,2),I(:,3),I(:,4),I(:,5),I(:,6)])
-legend('T=20 C 500 W/m²','T=16 C 750 W/m²','T=26 C 1000 W/m²','T=18 C 800 W/m²','T=15 C 750 W/m²','T=12 C 750 W/m²')
+legend('T=25 C 1000 W/m²','T=25 C 800 W/m²','T=25 C 600 W/m²','T=25 C 400 W/m²','T=25 C 200 W/m²','T=25 C 100 W/m²')
 xlabel('Tension [V]','fontsize',2)
 ylabel('Corriente [A]','fontsize',2)
-title('Diferentes Temperaturas [Celda Solar RSM120-6-340M]','fontsize',2)
+title('Corriente a Diferentes Irrradiancias W/m² [Celda Solar RSM120-6-340M]','fontsize',2)
 xgrid
+filename='1-Corriente Panel Solar a Diferentes Temperaturas Celda Solar y Niveles de Irradiancia RSM120-6-340M';
+xs2pdf(1,filename);
+xs2pdf(gcf(),filename);
 
-figure(2)
+//.....Gráfico de Potencia en panel solar a distintos tipos niveles de irradiancia....//
+scf(2)
 plot(V,[W(:,1),W(:,2),W(:,3),W(:,4),W(:,5),W(:,6)])
-legend('T=20 C 500 W/m²','T=16 C 750 W/m²','T=26 C 1000 W/m²','T=18 C 800 W/m²','T=15 C 750 W/m²','T=12 C 750 W/m²')
+legend('T=25 C 1000 W/m²','T=25 C 800 W/m²','T=25 C 600 W/m²','T=25 C 400 W/m²','T=25 C 200 W/m²','T=25 C 100 W/m²')
 xlabel('Tension [V]','fontsize',2)
-ylabel('Corriente [A]','fontsize',2)
-title('Diferentes Temperaturas [Celda Solar RSM120-6-340M] ','fontsize',2)
+ylabel('Potencia [W]','fontsize',2)
+title('Potencia a Diferentes Irradiancias W/m² [Celda Solar e Irrandicia RSM120-6-340M] ','fontsize',2)
 xgrid
+filename='2-Potencia Panel Solar a Diferentes Temperaturas Celda Solar e Irradiancia RSM120-6-340M';
+xs2pdf(2,filename);
+xs2pdf(gcf(),filename);
+
 
 
 ```
