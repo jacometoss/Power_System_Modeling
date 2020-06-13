@@ -2,21 +2,31 @@
 
 Matriz d de Impedancia es una herramienta importante en el análisis de sistema de potencia. 
 
-> Libro: Power System Analysis, 3era edición, 
->
-> Autor: William D.Stevenson,Jr.
->
-> Pag. 301-304
-
 ### Zbus y Ybus en Análisis de Sistemas de Potencia 
 
 1. La inyección de potencia a una barra es análogo a la inyección de corriente. 
+
 2. Se conoce de circuito que esto puede ser simulado por fuentes de corrientes en un nodo. 
+
 3. La inyección de corrientes ya sea positiva (a la barra) o negativa (fuera de la barra). Salvo la corriente que circula por una rama (y entonces esta es una cantidad de rama), una inyección de corriente es una cantidad nodal.
+
 4. La matriz de admitancias, es una herramienta de análisis de redes que ha sido muy usada, relaciona las inyecciones de corrientes a una barra a los voltajes de barra.
+
 5. La matriz de admitancias de barra relaciona las cantidades nodales.
+
 6. Las ramas que conectan los nodos se representas como líneas
+
 7. Todas las ramas son denotadas ya sea por valores de admitancia Y(i,j) por una rama que la conecta i y j, y Y(i) para los elementos shunt de la barra i.
+
+   
+
+   [Referencia]
+
+   > Libro: Power System Analysis, 3era edición, 
+   >
+   > Autor: William D.Stevenson,Jr.
+   >
+   > Pag. 301-304
 
 ![Zbus](https://i.ibb.co/xfq3Cxz/Zbus.jpg)
 
