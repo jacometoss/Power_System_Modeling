@@ -1,36 +1,35 @@
-# Matriz de Impedancia, Zbus
-
-Matriz d de Impedancia es una herramienta importante en el análisis de sistema de potencia. 
-
-> Libro: Power System Analysis, 3era edición, 
->
-> Autor: William D.Stevenson,Jr.
->
-> Pag. 301-304
-
-### Zbus y Ybus en Análisis de Sistemas de Potencia 
-
-1. La inyección de potencia a una barra es análogo a la inyección de corriente. 
-2. Se conoce de circuito que esto puede ser simulado por fuentes de corrientes en un nodo. 
-3. La inyección de corrientes ya sea positiva (a la barra) o negativa (fuera de la barra). Salvo la corriente que circula por una rama (y entonces esta es una cantidad de rama), una inyección de corriente es una cantidad nodal.
-4. La matriz de admitancias, es una herramienta de análisis de redes que ha sido muy usada, relaciona las inyecciones de corrientes a una barra a los voltajes de barra.
-5. La matriz de admitancias de barra relaciona las cantidades nodales.
-6. Las ramas que conectan los nodos se representas como líneas
-7. Todas las ramas son denotadas ya sea por valores de admitancia Y(i,j) por una rama que la conecta i y j, y Y(i) para los elementos shunt de la barra i.
-
-![Zbus](https://i.ibb.co/xfq3Cxz/Zbus.jpg)
-
-```scilab
+/*
+---------------------------------------------------------------------------------
+------------------------GENERADOR DE Zbus----------------------------------------
+---------------------------------------------------------------------------------
+--Codigo fuente en Scilab para obtener Zbus de una red cerrada o abierda---------
+--
+*/
 clc;
 clear;
 
+/*
 RX=[
-1 0 0 1.25;
+1 0 0 0.003075;
+1 2 1 0.06;
+1 3 2 0.06;
+1 4 0 0.06;
+2 5 3 2.00;
+2 0 1 0.4933;
+3 0 0 0.4933;
+4 0 0 0.4933]
+*/
+format("v",5)
+
+
+RX=[0 1 0 1.25;
 1 2 0 0.25;
 2 3 0 0.40;
-3 0 0 1.25;
+0 3 0 1.25;
 2 4 0 0.125;
 4 3 0 0.2]
+
+
 
 
 x=RX(:,1)
@@ -63,7 +62,6 @@ for i=1:length(x)
              end
          end
          Zbus = Zbn
-         disp(i)
          elseif (mControl>0 & nControl>0)
          Zbus=[Zbus Zbus(:,xymax)-Zbus(:,xymin); Zbus(xymax,:)-Zbus(xymin,:),z(i)+Zbus(xymin,xymax)+Zbus(xymax,xymax)-2*Zbus(xymax,xymin)]
          Zbn=zeros(rows,rows);
@@ -77,10 +75,21 @@ for i=1:length(x)
          
       end
     end
- end   
-disp(abs(Zbus));              
-      
-```
-
-
-
+ end 
+ 
+for i=1:max(size(Zbus))
+    for j=1:max(size(Zbus))
+            Zang(i,j)=atan(imag(Zbus(i,j))/real(Zbus(i,j)))*(180/%pi)   
+    end
+end          
+disp("[1]:::::::[Zbus]:::::::")
+disp((Zbus));
+disp("[2]::::::[AbsZbus]:::::::")
+disp(abs(Zbus));
+disp("[3]:::::::[Zbus Angulos]:::::::")
+disp((Zang));
+disp("[4]::::::[Ybus]:::::::")
+disp(inv(Zbus));
+disp("[5]::::::[AbsYbus]:::::::")
+disp(abs(inv(Zbus)));          
+                 
