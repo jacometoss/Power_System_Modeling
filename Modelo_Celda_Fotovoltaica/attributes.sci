@@ -1,6 +1,6 @@
 global Vi Vf Voc G Ta N Isc Ns Np A Ki Eg k q    
 //Definición de datos del panel 
-N=900;
+N=1200;
 Voc=40.10;
 Isc=10.20; 
 Ns=36;
