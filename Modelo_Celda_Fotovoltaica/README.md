@@ -4,11 +4,11 @@
 
 ​	La corriente del panel solar a diferentes tipos de temperaturas y radiación. 
 
-<img src="https://i.ibb.co/ZYcdJkY/01.png" alt="GitHub Logo"  />
+<img src="https://i.ibb.co/ZYcdJkY/01.png" alt="GitHub Logo" style="zoom:80%;" />
 
    La potencia del panel solar  a diferentes tipos de temperaturas y radiación.
 
-![](https://i.ibb.co/d6xxdcx/02.png)
+<img src="https://i.ibb.co/d6xxdcx/02.png" style="zoom:80%;" />
 
 
 
