@@ -2,8 +2,6 @@ getd .;
 
 Vi=0;
 Vf=45;
-
-
 G=1.0;
 Ta=25;
 [V,Ivtg,P]=photovoltaicCell(Vi,Vf,N,Ta,G,Voc,Isc,k,q,Ns,Np,A,Ki,Eg)  
