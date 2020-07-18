@@ -4,18 +4,18 @@
 
 ​	La corriente del panel solar a diferentes tipos de temperaturas y radiación. 
 
-<img src="https://i.ibb.co/51w12V3/01-data.jpg" alt="GitHub Logo"  />
+<img src="https://i.ibb.co/ZYcdJkY/01.png" alt="GitHub Logo"  />
 
    La potencia del panel solar  a diferentes tipos de temperaturas y radiación.
 
-![](https://i.ibb.co/5TfWwsY/02-data.jpg)
+![](https://i.ibb.co/d6xxdcx/02.png)
 
 
 
 
-##  Archivos [Modelo Panel Fotovoltaico]
+##  Archivos [Modelo Panel Fotovoltaico] RSM120-6-340M
 1. star.sce
-    * attributes.sci
+    * attributes.sci 
     * photovoltaicCell.sci 
 
 
@@ -26,7 +26,6 @@ getd .;
 
 Vi=0;
 Vf=45;
-
 
 G=1.0;
 Ta=25;
